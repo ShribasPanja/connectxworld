@@ -60,4 +60,20 @@ export class AuthService {
       token,
     };
   }
+
+  async refreshToken(refreshToken: string) {
+    try {
+      const payload = await this.jwtService.verifyAsync(refreshToken);
+      const newAccessToken = await this.jwtService.signAsync({
+        sub: payload.sub,
+        email: payload.email,
+      });
+      return {
+        message: 'Token refreshed',
+        token: newAccessToken,
+      };
+    } catch (e) {
+      throw new UnauthorizedException('Invalid refresh token');
+    }
+  }
 }

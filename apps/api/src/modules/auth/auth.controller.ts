@@ -34,4 +34,11 @@ export class AuthController {
     }
     return this.authService.loginUser(validated.data);
   }
+
+  @Post('refresh')
+  async refresh(@Body('refreshToken') refreshToken: string) {
+    if (!refreshToken)
+      throw new BadRequestException('No refresh token provided');
+    return this.authService.refreshToken(refreshToken);
+  }
 }

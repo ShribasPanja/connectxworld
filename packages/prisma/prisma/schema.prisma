@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
   output   = "../generated/prisma"
@@ -15,9 +9,71 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  name      String
-  email     String   @unique
-  password  String
-  createdAt DateTime @default(now())
+  id                  Int               @id @default(autoincrement())
+  name                String
+  email               String            @unique
+  password            String
+  createdAt           DateTime          @default(now())
+  Booking             Booking[]
+  Review              Review[]
+  Membership          Membership[]
+}
+
+model Consultant {
+  id                  Int               @id @default(autoincrement())
+  name                String
+  joinedAt            DateTime          @default(now())
+  specialization      String
+  profilePicture      String?
+  bio                 String?
+  rate                Float
+  availability        Boolean           @default(true)
+  experience          Experience[]
+  reviews             Review[]
+  Booking             Booking[]
+}
+
+model Experience {
+  id                  Int               @id @default(autoincrement())
+  consultantId        Int
+  title               String
+  description         String
+  startDate           DateTime
+  endDate             DateTime?
+  documentUrl         String[]
+  consultant          Consultant        @relation(fields: [consultantId], references: [id])
+}
+
+model Booking {
+  id                  Int               @id @default(autoincrement())
+  consultantId        Int
+  userId              Int
+  startTime           DateTime
+  endTime             DateTime
+  status              String            @default("pending")
+  createdAt           DateTime          @default(now())
+  updatedAt           DateTime          @updatedAt
+  consultant          Consultant        @relation(fields: [consultantId], references: [id])
+  user                User              @relation(fields: [userId], references: [id])
+}
+
+model Review {
+  id                  Int               @id @default(autoincrement())
+  consultantId        Int
+  userId              Int
+  rating              Int
+  comment             String?
+  createdAt           DateTime          @default(now())
+  consultant          Consultant        @relation(fields: [consultantId], references: [id])
+  user                User              @relation(fields: [userId], references: [id])
+}
+
+model Membership {
+  id                  Int               @id @default(autoincrement())
+  userId              Int
+  startDate           DateTime          @default(now())
+  endDate             DateTime?
+  type                String            
+  status              String            @default("active")
+  user                User              @relation(fields: [userId], references: [id])
 }
