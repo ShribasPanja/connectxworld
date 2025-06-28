@@ -1,4 +1,8 @@
-import { Injectable } from '@nestjs/common';
+import {
+  Injectable,
+  NotAcceptableException,
+  NotFoundException,
+} from '@nestjs/common';
 import { PrismaClient } from '@repo/prisma/client';
 
 const prisma = new PrismaClient();
@@ -34,22 +38,26 @@ export class ConsultantService {
         ],
       },
     });
+    if (consultant.length === 0) {
+      throw new NotFoundException('Consultant not found');
+    }
     return { consultant };
   }
-    async createConsultant(data: any) {
-        const { name, specialization, experience, bio, profilePicture, rate} = data;
-        if (!name || !specialization || !rate ) {
-        throw new Error('All fields are required');
-        }
-        const consultant = await prisma.consultant.create({
-        data: {
-            name,
-            specialization,
-            bio,
-            profilePicture,
-            rate,
-        },
-        });
-        return { message: 'Consultant created successfully', consultant };
+  async createConsultant(data: any) {
+    const { name, specialization, experience, bio, profilePicture, rate } =
+      data;
+    if (!name || !specialization || !rate) {
+      throw new NotAcceptableException('All fields are required');
     }
+    const consultant = await prisma.consultant.create({
+      data: {
+        name,
+        specialization,
+        bio,
+        profilePicture,
+        rate,
+      },
+    });
+    return { message: 'Consultant created successfully', consultant };
+  }
 }
