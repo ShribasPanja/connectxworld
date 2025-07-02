@@ -71,42 +71,42 @@ const categories = [
   {
     name: "Business Strategy",
     count: 45,
-    icon: "📊",
+    icon: "/icons/business.png",
     gradient: "from-blue-500 to-indigo-600",
     hoverGradient: "from-blue-600 to-indigo-700",
   },
   {
     name: "Technology",
     count: 67,
-    icon: "💻",
+    icon: "/icons/technology.png",
     gradient: "from-purple-500 to-pink-600",
     hoverGradient: "from-purple-600 to-pink-700",
   },
   {
     name: "Marketing",
     count: 34,
-    icon: "📈",
+    icon: "/icons/marketing.png",
     gradient: "from-green-500 to-emerald-600",
     hoverGradient: "from-green-600 to-emerald-700",
   },
   {
     name: "Finance",
     count: 28,
-    icon: "💰",
+    icon: "/icons/finance.png",
     gradient: "from-yellow-500 to-orange-600",
     hoverGradient: "from-yellow-600 to-orange-700",
   },
   {
     name: "Legal",
     count: 19,
-    icon: "⚖️",
+    icon: "/icons/legal.png",
     gradient: "from-gray-500 to-slate-600",
     hoverGradient: "from-gray-600 to-slate-700",
   },
   {
     name: "Healthcare",
     count: 23,
-    icon: "🏥",
+    icon: "/icons/healthcare.png",
     gradient: "from-red-500 to-rose-600",
     hoverGradient: "from-red-600 to-rose-700",
   },
@@ -133,21 +133,21 @@ export default function HomePage() {
             <nav className="hidden md:flex items-center space-x-8">
               <a
                 href="#"
-                className="text-slate-600 hover:text-transparent hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:bg-clip-text transition-all duration-300 font-medium relative group"
+                className="text-slate-600 hover:text-transparent hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:bg-clip-text transition-all duration-300 text-2xl relative group"
               >
                 Find Experts
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:w-full transition-all duration-300"></span>
               </a>
               <a
                 href="#"
-                className="text-slate-600 hover:text-transparent hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:bg-clip-text transition-all duration-300 font-medium relative group"
+                className="text-slate-600 hover:text-transparent hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:bg-clip-text transition-all duration-300 text-2xl relative group"
               >
                 How it Works
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:w-full transition-all duration-300"></span>
               </a>
               <a
                 href="#"
-                className="text-slate-600 hover:text-transparent hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:bg-clip-text transition-all duration-300 font-medium relative group"
+                className="text-slate-600 hover:text-transparent hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:bg-clip-text transition-all duration-300 text-2xl relative group"
               >
                 Become an Expert
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:w-full transition-all duration-300"></span>
@@ -177,13 +177,13 @@ export default function HomePage() {
 
         <div className="w-full mx-auto text-center relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200/50 rounded-full px-6 py-2 mb-8 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 group">
-            <Sparkles className="h-4 w-4 text-blue-600 group-hover:text-purple-600 transition-colors duration-300" />
-            <span className="text-sm font-medium bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <Sparkles className="sm:h-6 sm:w-6 h-4 w-4 text-blue-600 group-hover:text-purple-600 transition-colors duration-300" />
+            <span className="sm:text-xl text-sm font-medium bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Trusted by 50,000+ professionals worldwide
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold text-slate-900 mb-6 leading-tight">
+          <h1 className="text-5xl md:text-8xl font-bold text-slate-900 mb-6 leading-tight">
             Connect with World-Class
             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent block animate-pulse">
               Professionals
@@ -206,10 +206,10 @@ export default function HomePage() {
                     placeholder="Search for expertise (e.g., business strategy, marketing, tech...)"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-14 pr-4 py-6 text-lg border-0 focus:ring-0 bg-transparent placeholder:text-slate-400"
+                    className="pl-14 pr-4 py-6 text-lg border-0 outline-none bg-transparent placeholder:text-slate-400"
                   />
                 </div>
-                <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 group">
+                <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-6 text-sm sm:text-xl font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 group">
                   Search
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </Button>
@@ -240,22 +240,22 @@ export default function HomePage() {
               },
             ].map((stat, index) => (
               <div key={index} className="group cursor-pointer">
-                <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
+                <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-12 border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
                   ></div>
                   <div className="relative z-10">
                     <div
-                      className={`w-16 h-16 bg-gradient-to-br ${stat.gradient} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}
+                      className={`w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br ${stat.gradient} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}
                     >
-                      <stat.icon className="h-8 w-8 text-white" />
+                      <stat.icon className="h-8 w-8 md:h-12 md:w-12 text-white" />
                     </div>
                     <div
                       className={`text-4xl font-bold bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent mb-2 group-hover:scale-105 transition-transform duration-300`}
                     >
                       {stat.number}
                     </div>
-                    <div className="text-slate-600 font-medium">
+                    <div className="text-slate-600 md:text-lg font-medium">
                       {stat.label}
                     </div>
                   </div>
@@ -270,10 +270,10 @@ export default function HomePage() {
       <section className="py-20 bg-white relative w-full">
         <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            <h2 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6">
               Explore by Category
             </h2>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-slate-600 max-w-2xl mx-auto">
               Discover experts across diverse fields and industries
             </p>
           </div>
@@ -281,26 +281,26 @@ export default function HomePage() {
             {categories.map((category, index) => (
               <Card
                 key={index}
-                className="group hover:shadow-2xl transition-all duration-500 cursor-pointer border-0 bg-white hover:-translate-y-3 relative overflow-hidden"
+                className="group rounded-3xl hover:shadow-2xl transition-all duration-500 cursor-pointer border-0 bg-white hover:-translate-y-3 relative overflow-hidden flexible "
               >
                 <div
-                  className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-0 group-hover:opacity-100 transition-all duration-500`}
+                  className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-10 group-hover:opacity-100 transition-all duration-500`}
                 ></div>
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${category.hoverGradient} opacity-0 group-hover:opacity-90 transition-all duration-700 delay-100`}
                 ></div>
-                <CardContent className="p-8 text-center relative z-10">
-                  <div className="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300 group-hover:animate-bounce">
-                    {category.icon}
+                <CardContent className="p-8 md:p-15 text-center relative z-10">
+                  <div className="mb-4 group-hover:scale-125 transition-transform duration-300 group-hover:animate-bounce">
+                    <img src={category.icon} alt={category.name} className="w-12 h-12 md:w-20 md:h-20 mx-auto" />
                   </div>
-                  <h3 className="font-bold text-slate-900 mb-2 group-hover:text-white transition-colors duration-300 text-lg">
+                  <h3 className="font-bold text-slate-900 mb-2 group-hover:text-white transition-colors duration-300 text-lg md:text-2xl">
                     {category.name}
                   </h3>
-                  <p className="text-sm text-slate-500 group-hover:text-white/80 transition-colors duration-300">
+                  <p className="text-sm md:text-lg text-slate-500 group-hover:text-white/80 transition-colors duration-300">
                     {category.count} experts
                   </p>
                   <div className="mt-4 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-200">
-                    <ArrowRight className="h-5 w-5 text-white mx-auto" />
+                    <ArrowRight className="h-5 w-5 md:h-8 md:w-8 text-white mx-auto" />
                   </div>
                 </CardContent>
               </Card>
@@ -318,10 +318,10 @@ export default function HomePage() {
 
         <div className="w-full mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            <h2 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6">
               Top-Rated Professionals
             </h2>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-slate-600 max-w-2xl mx-auto">
               Connect with industry leaders who have helped thousands succeed
             </p>
           </div>
@@ -342,27 +342,27 @@ export default function HomePage() {
                       <img
                         src={professional.image}
                         alt={professional.name}
-                        className="w-20 h-20 rounded-full object-cover border-4 border-white shadow-lg"
+                        className="w-20 h-20 md:w-30 md:h-30 rounded-full object-cover border-4 border-white shadow-lg"
                       />
                       <div
                         className={`absolute -inset-1 bg-gradient-to-r ${professional.gradient} rounded-full opacity-0 group-hover:opacity-50 blur transition-all duration-300`}
                       ></div>
                     </div>
                     <div className="flex-1">
-                      <CardTitle className="text-xl group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                      <CardTitle className="text-xl md:text-3xl group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
                         {professional.name}
                       </CardTitle>
-                      <CardDescription className="text-slate-600 text-base">
+                      <CardDescription className="text-slate-600 text-base md:text-lg">
                         {professional.title}
                       </CardDescription>
                       <div className="flex items-center space-x-2 mt-3">
                         <div className="flex items-center bg-yellow-50 px-3 py-1 rounded-full">
-                          <Star className="h-4 w-4 text-yellow-500 fill-current" />
+                          <Star className="h-4 w-4 md:h-6 md:w-6 text-yellow-500 fill-current" />
                           <span className="text-sm font-bold text-yellow-700 ml-1">
                             {professional.rating}
                           </span>
                         </div>
-                        <span className="text-sm text-slate-500">
+                        <span className="text-sm md:text-lg text-slate-500">
                           ({professional.reviews} reviews)
                         </span>
                       </div>
@@ -375,7 +375,7 @@ export default function HomePage() {
                       {professional.expertise.map((skill, skillIndex) => (
                         <Badge
                           key={skillIndex}
-                          className={`bg-gradient-to-r ${professional.gradient} text-white hover:scale-105 transition-transform duration-200 shadow-lg`}
+                          className={`bg-gradient-to-r ${professional.gradient} text-white text-xs md:text-lg hover:scale-105 transition-transform duration-200 shadow-lg`}
                         >
                           {skill}
                         </Badge>
@@ -384,18 +384,18 @@ export default function HomePage() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-2">
                         <div className="bg-green-100 p-2 rounded-full">
-                          <DollarSign className="h-5 w-5 text-green-600" />
+                          <DollarSign className="h-5 w-5 md:h-7 md:w-7 text-green-600" />
                         </div>
                         <div>
-                          <span className="font-bold text-2xl text-slate-900">
+                          <span className="font-bold text-2xl md:text-4xl text-slate-900">
                             ${professional.hourlyRate}
                           </span>
                           <span className="text-slate-500">/hour</span>
                         </div>
                       </div>
                       <div className="flex items-center space-x-1 text-sm bg-green-50 px-3 py-2 rounded-full">
-                        <Clock className="h-4 w-4 text-green-600" />
-                        <span className="text-green-700 font-medium">
+                        <Clock className="h-4 w-4 md:h-6 md:w-6 text-green-600" />
+                        <span className="text-green-700 text-sm md:text-base font-medium">
                           {professional.availability}
                         </span>
                       </div>
@@ -403,9 +403,9 @@ export default function HomePage() {
                     <Button
                       className={`w-full bg-gradient-to-r ${professional.gradient} hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-white font-semibold py-3 group relative overflow-hidden`}
                     >
-                      <span className="relative z-10 flex items-center justify-center">
+                      <span className="relative text-base md:text-2xl z-10 flex items-center justify-center">
                         Book Consultation
-                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                        <ArrowRight className="ml-2 h-4 w-4 md:h-6 md:w-6 group-hover:translate-x-1 transition-transform duration-300" />
                       </span>
                       <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                     </Button>
@@ -418,10 +418,10 @@ export default function HomePage() {
             <Button
               variant="outline"
               size="lg"
-              className="border-2 border-blue-200 text-blue-600 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 hover:border-purple-300 hover:text-purple-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 px-8 py-4 text-lg font-semibold"
+              className="border-2 border-blue-200 text-blue-600 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 hover:border-purple-300 hover:text-purple-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 px-8 py-4 text-lg md:text-xl font-semibold"
             >
               View All Professionals
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="ml-2 h-5 w-5 md:h-6 md:w-6" />
             </Button>
           </div>
         </div>
@@ -435,10 +435,10 @@ export default function HomePage() {
 
         <div className="w-full mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            <h2 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6">
               How ConnectXWorld Works
             </h2>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-slate-600 max-w-2xl mx-auto">
               Three simple steps to connect with world-class expertise
             </p>
           </div>
@@ -484,10 +484,10 @@ export default function HomePage() {
                     className={`absolute -inset-2 bg-gradient-to-br ${step.gradient} rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500`}
                   ></div>
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                <h3 className="text-2xl md:text-4xl font-bold text-slate-900 mb-4 group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
                   {step.title}
                 </h3>
-                <p className="text-slate-600 leading-relaxed text-lg group-hover:text-slate-700 transition-colors duration-300">
+                <p className="text-slate-600 leading-relaxed text-lg md:text-xl group-hover:text-slate-700 transition-colors duration-300">
                   {step.description}
                 </p>
               </div>
@@ -503,13 +503,13 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
             <div className="text-center mb-12 relative z-10">
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl mb-6 shadow-2xl group-hover:scale-110 transition-transform duration-300">
+              <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl mb-6 shadow-2xl group-hover:scale-110 transition-transform duration-300">
                 <Shield className="h-10 w-10 text-white" />
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+              <h2 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6">
                 Secure & Trusted Platform
               </h2>
-              <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
                 Your privacy and security are our top priorities. All
                 consultations and payments are protected with enterprise-grade
                 security.
@@ -542,14 +542,14 @@ export default function HomePage() {
                   className="text-center group/item hover:-translate-y-2 transition-all duration-300"
                 >
                   <div
-                    className={`w-16 h-16 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover/item:shadow-xl group-hover/item:scale-110 transition-all duration-300`}
+                    className={`w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover/item:shadow-xl group-hover/item:scale-110 transition-all duration-300`}
                   >
                     <feature.icon className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="font-bold text-slate-900 mb-3 text-lg group-hover/item:text-blue-600 transition-colors duration-300">
+                  <h3 className="font-bold text-slate-900 mb-3 text-lg md:text-2xl group-hover/item:text-blue-600 transition-colors duration-300">
                     {feature.title}
                   </h3>
-                  <p className="text-slate-600 group-hover/item:text-slate-700 transition-colors duration-300">
+                  <p className="text-slate-600 group-hover/item:text-slate-700 transition-colors duration-300 text-base md:text-lg">
                     {feature.description}
                   </p>
                 </div>
@@ -654,7 +654,7 @@ export default function HomePage() {
                     <li key={linkIndex}>
                       <a
                         href="#"
-                        className="text-slate-400 hover:text-white hover:bg-gradient-to-r hover:from-blue-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 relative group"
+                        className="text-slate-400 hover:text-white hover:bg-gradient-to-r hover:from-blue-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300 text-base md:text-xl relative group"
                       >
                         {link}
                         <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 group-hover:w-full transition-all duration-300"></span>

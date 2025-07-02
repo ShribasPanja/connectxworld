@@ -209,19 +209,17 @@ export default function ProfessionalsPage() {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
-      {/* Enhanced Header */}
-      <header className="bg-white/90 backdrop-blur-xl border-b border-white/20 sticky top-0 z-50 shadow-lg shadow-blue-500/5">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+    <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+      {/* Header */}
+      <header className="bg-white/90 backdrop-blur-xl border-b border-white/20 sticky top-0 z-50 shadow-lg shadow-blue-500/5 w-full">
+        <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 sm:h-25">
             <div className="flex items-center space-x-3 group">
               <a href="/" className="flex items-center space-x-3">
-                <div className="relative">
-                  <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent group-hover:from-purple-600 group-hover:via-pink-600 group-hover:to-blue-600 transition-all duration-500">
-                    ConnectXWorld
-                  </span>
-                  <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded opacity-0 group-hover:opacity-10 blur transition-all duration-300"></div>
-                </div>
+                <span className="sm:text-4xl text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent group-hover:from-purple-600 group-hover:via-pink-600 group-hover:to-blue-600 transition-all duration-500">
+                  ConnectXWorld
+                </span>
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded opacity-0 group-hover:opacity-10 blur transition-all duration-300"></div>
               </a>
             </div>
             <nav className="hidden md:flex items-center space-x-8">
@@ -239,12 +237,12 @@ export default function ProfessionalsPage() {
         </div>
       </header>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Enhanced Page Header */}
         <div className="mb-12 text-center">
           <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200/50 rounded-full px-6 py-2 mb-6 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 group">
-            <Sparkles className="h-4 w-4 text-blue-600 group-hover:text-purple-600 transition-colors duration-300" />
-            <span className="text-sm font-medium bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <Sparkles className="sm:h-6 sm:w-6 h-4 w-4 text-blue-600 group-hover:text-purple-600 transition-colors duration-300" />
+            <span className="sm:text-xl text-sm font-medium bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               {professionals.length} verified professionals available
             </span>
           </div>
@@ -263,7 +261,6 @@ export default function ProfessionalsPage() {
         {/* Enhanced Search and Filters */}
         <div className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/50 mb-12 relative overflow-hidden group hover:shadow-3xl transition-all duration-500">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 relative z-10">
             {/* Enhanced Search */}
             <div className="lg:col-span-2">
@@ -281,7 +278,6 @@ export default function ProfessionalsPage() {
                 </div>
               </div>
             </div>
-
             {/* Enhanced Filters */}
             <div className="group/filter">
               <select
@@ -296,7 +292,6 @@ export default function ProfessionalsPage() {
                 ))}
               </select>
             </div>
-
             <div className="group/filter">
               <select
                 value={selectedPriceRange}
@@ -310,7 +305,6 @@ export default function ProfessionalsPage() {
                 ))}
               </select>
             </div>
-
             <div className="group/filter">
               <select
                 value={sortBy}
@@ -324,7 +318,6 @@ export default function ProfessionalsPage() {
               </select>
             </div>
           </div>
-
           <div className="flex items-center justify-between mt-8 pt-6 border-t border-slate-200/50 relative z-10">
             <div className="flex items-center space-x-3">
               <TrendingUp className="h-5 w-5 text-blue-600" />
@@ -347,7 +340,7 @@ export default function ProfessionalsPage() {
         </div>
 
         {/* Enhanced Professionals Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
           {sortedProfessionals.map((professional, index) => (
             <Card
               key={professional.id}
@@ -359,7 +352,6 @@ export default function ProfessionalsPage() {
               <div
                 className={`absolute -inset-1 bg-gradient-to-r ${professional.hoverGradient} rounded-2xl opacity-0 group-hover:opacity-20 blur transition-all duration-500`}
               ></div>
-
               <CardHeader className="pb-4 relative z-10">
                 <div className="flex items-start space-x-4">
                   <div className="relative group-hover:scale-110 transition-transform duration-300">
@@ -391,7 +383,6 @@ export default function ProfessionalsPage() {
                         </div>
                       </div>
                     </div>
-
                     <div className="flex items-center space-x-4 mt-4">
                       <div className="flex items-center bg-yellow-50 px-3 py-1.5 rounded-full border border-yellow-200">
                         <Star className="h-4 w-4 text-yellow-500 fill-current" />
@@ -410,12 +401,10 @@ export default function ProfessionalsPage() {
                   </div>
                 </div>
               </CardHeader>
-
               <CardContent className="pt-0 space-y-6 relative z-10">
                 <p className="text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300">
                   {professional.description}
                 </p>
-
                 <div className="flex flex-wrap gap-2">
                   {professional.expertise.map((skill, skillIndex) => (
                     <Badge
@@ -426,7 +415,6 @@ export default function ProfessionalsPage() {
                     </Badge>
                   ))}
                 </div>
-
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   <div className="flex items-center space-x-2 bg-blue-50 p-3 rounded-xl">
                     <Clock className="h-4 w-4 text-blue-600" />
@@ -441,12 +429,10 @@ export default function ProfessionalsPage() {
                     </span>
                   </div>
                 </div>
-
                 <div className="text-sm text-slate-600 bg-slate-50 p-3 rounded-xl">
                   <span className="font-medium">Languages:</span>{" "}
                   {professional.languages.join(", ")}
                 </div>
-
                 <div className="flex space-x-3 pt-4 border-t border-slate-200/50">
                   <Button
                     variant="outline"
@@ -470,7 +456,6 @@ export default function ProfessionalsPage() {
             </Card>
           ))}
         </div>
-
         {/* Enhanced Load More */}
         {sortedProfessionals.length > 0 && (
           <div className="text-center mt-16">
@@ -484,15 +469,16 @@ export default function ProfessionalsPage() {
             </Button>
           </div>
         )}
-
         {/* Enhanced No Results */}
         {sortedProfessionals.length === 0 && (
           <div className="text-center py-20">
-            <div className="text-8xl mb-8 animate-bounce">🔍</div>
-            <h3 className="text-3xl font-bold text-slate-900 mb-6">
+            <div className="text-8xl md:text-[12rem] mb-8 animate-bounce">
+              🔍
+            </div>
+            <h3 className="text-3xl md:text-6xl font-bold text-slate-900 mb-6">
               No professionals found
             </h3>
-            <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl md:text-3xl text-slate-600 mb-8 max-w-2xl mx-auto">
               Try adjusting your search criteria or browse all categories to
               discover amazing experts.
             </p>
@@ -502,10 +488,10 @@ export default function ProfessionalsPage() {
                 setSelectedCategory("All Categories");
                 setSelectedPriceRange("All Prices");
               }}
-              className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-8 py-4 text-lg font-semibold shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group"
+              className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white px-8 py-4 text-lg md:text-2xl font-semibold shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group"
             >
               Clear All Filters
-              <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+              <ArrowRight className="ml-3 h-5 w-5 md:h-10 md:w-10 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>
           </div>
         )}
