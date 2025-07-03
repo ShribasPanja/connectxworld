@@ -62,12 +62,12 @@ export default function Contact() {
 
   return (
     <section className="py-20 bg-white">
-      <div className="w-full px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-12">
         <div className="text-center mb-16 animate-slide-up">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             Get in Touch
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
             Have questions about ConnectXWorld? Want to join as a professional?
             We're here to help you succeed.
           </p>
@@ -85,10 +85,12 @@ export default function Contact() {
               >
                 <method.icon size={28} />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <h3 className="text-xl md:text-3xl font-semibold text-gray-900 mb-3">
                 {method.title}
               </h3>
-              <p className="text-gray-600 mb-6">{method.description}</p>
+              <p className="text-gray-600 mb-6 md:text-xl">
+                {method.description}
+              </p>
               <button className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition-colors font-medium">
                 {method.action}
               </button>
@@ -96,10 +98,12 @@ export default function Contact() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div className="animate-slide-up">
             <div className="bg-gradient-to-br from-blue-600 to-green-600 rounded-3xl p-8 text-white">
-              <h3 className="text-2xl font-bold mb-8">Contact Information</h3>
+              <h3 className="text-2xl md:text-4xl font-bold mb-8">
+                Contact Information
+              </h3>
 
               <div className="space-y-6">
                 <div className="flex items-center">
@@ -152,12 +156,14 @@ export default function Contact() {
                 <h4 className="font-semibold mb-2">Quick Stats</h4>
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   <div>
-                    <div className="text-2xl font-bold">24/7</div>
-                    <div className="opacity-75">Support Available</div>
+                    <div className="text-2xl md:text-4xl font-bold">24/7</div>
+                    <div className="opacity-75 md:text-lg">
+                      Support Available
+                    </div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold">&lt;2h</div>
-                    <div className="opacity-75">Response Time</div>
+                    <div className="text-2xl md:text-4xl font-bold">&lt;2h</div>
+                    <div className="opacity-75 md:text-lg">Response Time</div>
                   </div>
                 </div>
               </div>
@@ -168,7 +174,7 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm md:text-lg font-medium text-gray-700 mb-2">
                     Full Name *
                   </label>
                   <input
@@ -183,7 +189,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm md:text-lg font-medium text-gray-700 mb-2">
                     Email Address *
                   </label>
                   <input
@@ -200,7 +206,7 @@ export default function Contact() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm md:text-lg font-medium text-gray-700 mb-2">
                     Company
                   </label>
                   <input
@@ -214,7 +220,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm md:text-lg font-medium text-gray-700 mb-2">
                     Inquiry Type
                   </label>
                   <select
@@ -234,7 +240,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm md:text-lg font-medium text-gray-700 mb-2">
                   Message *
                 </label>
                 <textarea
@@ -250,19 +256,19 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-white px-8 py-4 rounded-xl hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center gap-2 group font-medium"
+                className="w-full bg-blue-600 text-white px-8 py-4 rounded-xl hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center gap-2 group font-medium text-md md:text-xl"
               >
                 Send Message
                 <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
 
-              <p className="text-sm text-gray-500 text-center">
+              <p className="text-sm md:text-lg text-gray-500 text-center">
                 We'll get back to you within 24 hours. For urgent matters,
                 please call us directly.
               </p>
             </form>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

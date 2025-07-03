@@ -155,7 +155,7 @@
     position: relative;
   }
   
-  .booking-step::after {
+  /* .booking-step::after {
     content: '';
     position: absolute;
     top: 50%;
@@ -164,11 +164,11 @@
     height: 2px;
     background: linear-gradient(90deg, #3b82f6, transparent);
     transform: translateY(-50%);
-  }
+  } */
   
-  .booking-step:last-child::after {
+  /* .booking-step:last-child::after {
     display: none;
-  }
+  } */
   
   @media (max-width: 768px) {
     .booking-step::after {

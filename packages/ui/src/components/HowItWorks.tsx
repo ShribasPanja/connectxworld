@@ -36,12 +36,12 @@ export default function HowItWorks() {
 
   return (
     <section id="how-it-works" className="py-20 bg-gray-50">
-      <div className="w-full px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-12">
         <div className="text-center mb-16 animate-slide-up">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             How ConnectXWorld Works
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
             Getting expert advice has never been easier. Follow these simple
             steps to connect with professionals and transform your business.
           </p>
@@ -56,20 +56,20 @@ export default function HowItWorks() {
             >
               <div className="bg-white p-8 rounded-2xl shadow-lg card-hover text-center">
                 <div
-                  className={`w-16 h-16 ${step.color} rounded-2xl flex items-center justify-center mx-auto mb-6 feature-icon`}
+                  className={`w-16 h-16 md:w-25 md:h-25 ${step.color} rounded-2xl flex items-center justify-center mx-auto mb-6 feature-icon`}
                 >
-                  <step.icon size={32} />
+                  <step.icon size={40} />
                 </div>
 
-                <div className="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-4">
+                <div className="bg-blue-600 text-white w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-sm md:text-lg font-bold mx-auto mb-4">
                   {index + 1}
                 </div>
 
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                <h3 className="text-xl md:text-3xl font-semibold text-gray-900 mb-4">
                   {step.title}
                 </h3>
 
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed md:text-xl">
                   {step.description}
                 </p>
               </div>
@@ -78,13 +78,15 @@ export default function HowItWorks() {
         </div>
 
         <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-blue-600 to-green-600 rounded-2xl p-8 text-white animate-fade-in">
-            <h3 className="text-2xl font-bold mb-4">Ready to Get Started?</h3>
-            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
+          <div className="bg-gradient-to-r from-blue-600 to-green-600 rounded-2xl p-10 text-white animate-fade-in">
+            <h3 className="text-2xl md:text-4xl font-bold mb-4">
+              Ready to Get Started?
+            </h3>
+            <p className="text-blue-100 mb-6 max-w-2xl mx-auto md:text-2xl">
               Join thousands of satisfied clients who have transformed their
               businesses with expert guidance from ConnectXWorld professionals.
             </p>
-            <button className="bg-white text-blue-600 px-8 py-3 rounded-full hover:bg-gray-100 transition-colors font-semibold">
+            <button className="bg-white text-md md:text-xl text-blue-600 px-8 py-3 rounded-full hover:bg-gray-100 transition-colors font-semibold">
               Start Your Journey Today
             </button>
           </div>

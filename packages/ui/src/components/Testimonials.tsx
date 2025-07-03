@@ -65,12 +65,12 @@ export default function Testimonials() {
 
   return (
     <section className="py-20 bg-gray-50">
-      <div className="w-full px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-12">
         <div className="text-center mb-16 animate-slide-up">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             Success Stories from Our Community
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
             Real results from real businesses. See how ConnectXWorld has helped
             entrepreneurs and companies achieve their goals.
           </p>
@@ -105,13 +105,13 @@ export default function Testimonials() {
                     className="w-16 h-16 rounded-full object-cover mr-4"
                   />
                   <div>
-                    <h4 className="font-semibold text-lg text-gray-900">
+                    <h4 className="font-semibold text-lg md:text-3xl text-gray-900">
                       {testimonials[currentTestimonial]?.name}
                     </h4>
-                    <p className="text-gray-600">
+                    <p className="text-gray-600 md:text-xl">
                       {testimonials[currentTestimonial]?.role}
                     </p>
-                    <p className="text-blue-600 font-medium">
+                    <p className="text-blue-600 font-medium md:text-lg">
                       {testimonials[currentTestimonial]?.company}
                     </p>
                   </div>
@@ -120,11 +120,15 @@ export default function Testimonials() {
 
               <div className="text-center">
                 <div className="bg-gradient-to-br from-blue-600 to-green-600 rounded-3xl p-8 text-white mb-8">
-                  <h3 className="text-2xl font-bold mb-4">Result Achieved</h3>
-                  <div className="text-4xl font-bold mb-2">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                    Result Achieved
+                  </h3>
+                  <div className="text-4xl md:text-6xl font-bold mb-2">
                     {testimonials[currentTestimonial]?.result}
                   </div>
-                  <p className="text-blue-100">Through expert consultation</p>
+                  <p className="text-blue-100 md:text-lg">
+                    Through expert consultation
+                  </p>
                 </div>
 
                 <div className="flex justify-center space-x-4">
@@ -172,10 +176,12 @@ export default function Testimonials() {
                   className="w-12 h-12 rounded-full object-cover mr-3"
                 />
                 <div>
-                  <h4 className="font-semibold text-gray-900">
+                  <h4 className="font-semibold text-gray-900 md:text-2xl">
                     {testimonial.name}
                   </h4>
-                  <p className="text-sm text-gray-600">{testimonial.company}</p>
+                  <p className="text-sm md:text-lg text-gray-600">
+                    {testimonial.company}
+                  </p>
                 </div>
               </div>
 
@@ -188,12 +194,12 @@ export default function Testimonials() {
                 ))}
               </div>
 
-              <p className="text-gray-700 text-sm leading-relaxed">
+              <p className="text-gray-700 text-sm md:text-xl leading-relaxed">
                 "{testimonial.content.substring(0, 120)}..."
               </p>
 
               <div className="mt-4 pt-4 border-t border-gray-100">
-                <span className="text-green-600 font-medium text-sm">
+                <span className="text-green-600 font-medium text-sm md:text-lg">
                   {testimonial.result}
                 </span>
               </div>

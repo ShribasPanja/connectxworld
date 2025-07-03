@@ -73,12 +73,12 @@ export default function Features() {
 
   return (
     <section className="py-20 bg-gradient-to-br from-blue-50 to-green-50">
-      <div className="w-full px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-12">
         <div className="text-center mb-16 animate-slide-up">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             Why Choose ConnectXWorld?
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
             We've built the most comprehensive platform for professional
             consultations, ensuring quality, security, and success for every
             interaction.
@@ -96,15 +96,15 @@ export default function Features() {
                 <feature.icon className="w-7 h-7 text-blue-600" />
               </div>
 
-              <div className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-medium mb-3 inline-block">
+              <div className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs md:text-sm font-medium mb-3 inline-block">
                 {feature.highlight}
               </div>
 
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+              <h3 className="text-lg md:text-3xl font-semibold text-gray-900 mb-3">
                 {feature.title}
               </h3>
 
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-gray-600 text-sm md:text-xl leading-relaxed">
                 {feature.description}
               </p>
             </div>
@@ -114,10 +114,10 @@ export default function Features() {
         <div className="mt-16 bg-white rounded-3xl p-8 md:p-12 shadow-xl animate-fade-in">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-6">
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Ready to Transform Your Business?
               </h3>
-              <p className="text-lg text-gray-600 mb-8">
+              <p className="text-lg md:text-2xl text-gray-600 mb-8">
                 Join thousands of successful entrepreneurs and business leaders
                 who have accelerated their growth with expert guidance from
                 ConnectXWorld.
@@ -134,32 +134,36 @@ export default function Features() {
 
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-blue-50 p-6 rounded-2xl text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-2">
+                <div className="text-3xl md:text-5xl font-bold text-blue-600 mb-2">
                   10K+
                 </div>
-                <div className="text-sm text-gray-600">
+                <div className="text-sm md:text-lg text-gray-600">
                   Active Professionals
                 </div>
               </div>
               <div className="bg-green-50 p-6 rounded-2xl text-center">
-                <div className="text-3xl font-bold text-green-600 mb-2">
+                <div className="text-3xl md:text-5xl font-bold text-green-600 mb-2">
                   50K+
                 </div>
-                <div className="text-sm text-gray-600">
+                <div className="text-sm md:text-lg text-gray-600">
                   Successful Consultations
                 </div>
               </div>
               <div className="bg-purple-50 p-6 rounded-2xl text-center">
-                <div className="text-3xl font-bold text-purple-600 mb-2">
+                <div className="text-3xl md:text-5xl font-bold text-purple-600 mb-2">
                   4.9★
                 </div>
-                <div className="text-sm text-gray-600">Average Rating</div>
+                <div className="text-sm md:text-lg text-gray-600">
+                  Average Rating
+                </div>
               </div>
               <div className="bg-orange-50 p-6 rounded-2xl text-center">
-                <div className="text-3xl font-bold text-orange-600 mb-2">
+                <div className="text-3xl md:text-5xl font-bold text-orange-600 mb-2">
                   95%
                 </div>
-                <div className="text-sm text-gray-600">Success Rate</div>
+                <div className="text-sm md:text-lg text-gray-600">
+                  Success Rate
+                </div>
               </div>
             </div>
           </div>

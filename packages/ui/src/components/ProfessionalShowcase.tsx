@@ -64,12 +64,12 @@ export default function ProfessionalShowcase() {
 
   return (
     <section id="professionals" className="py-20 bg-white">
-      <div className="w-full px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-12">
         <div className="text-center mb-16 animate-slide-up">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             Meet Our Top-Rated Professionals
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
             Connect with verified experts across industries. All professionals
             are thoroughly vetted and rated by our community.
           </p>
@@ -86,18 +86,18 @@ export default function ProfessionalShowcase() {
                 <img
                   src={professional.image}
                   alt={professional.name}
-                  className="w-full h-64 object-cover"
+                  className="w-full h-90 w-auto object-cover"
                 />
                 <div className="absolute top-4 left-4">
-                  <div className="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
-                    <Clock size={12} />
+                  <div className="bg-green-500 text-white px-3 py-1 rounded-full text-sm md:text-base font-medium flex items-center gap-1">
+                    <Clock size={16} />
                     {professional.availability}
                   </div>
                 </div>
                 {professional.verified && (
                   <div className="absolute top-4 right-4">
                     <div className="bg-blue-600 text-white p-2 rounded-full">
-                      <CheckCircle size={16} />
+                      <CheckCircle size={25} />
                     </div>
                   </div>
                 )}
@@ -105,22 +105,22 @@ export default function ProfessionalShowcase() {
 
               <div className="p-6">
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="font-semibold text-lg text-gray-900">
+                  <h3 className="font-semibold text-lg md:text-2xl text-gray-900">
                     {professional.name}
                   </h3>
                   <div className="flex items-center gap-1">
-                    <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                    <span className="text-sm font-medium">
+                    <Star className="w-4 h-4 md:w-6 md:h-6 text-yellow-400 fill-current" />
+                    <span className="text-sm md:text-xl font-medium">
                       {professional.rating}
                     </span>
                   </div>
                 </div>
 
-                <p className="text-blue-600 font-medium mb-2">
+                <p className="text-blue-600 text-md md:text-xl font-medium mb-2">
                   {professional.title}
                 </p>
 
-                <div className="flex items-center text-gray-500 text-sm mb-3">
+                <div className="flex items-center text-gray-500 text-sm md:text-lg mb-3">
                   <MapPin size={14} className="mr-1" />
                   {professional.location}
                 </div>
@@ -131,13 +131,13 @@ export default function ProfessionalShowcase() {
                     .map((skill, skillIndex) => (
                       <span
                         key={skillIndex}
-                        className="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs"
+                        className="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs md:text-base"
                       >
                         {skill}
                       </span>
                     ))}
                   {professional.expertise.length > 2 && (
-                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs">
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs md:text-base">
                       +{professional.expertise.length - 2} more
                     </span>
                   )}
@@ -145,19 +145,19 @@ export default function ProfessionalShowcase() {
 
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                    <span className="text-2xl font-bold text-gray-900">
+                    <span className="text-2xl md:text-4xl font-bold text-gray-900">
                       ${professional.rate}
                     </span>
-                    <span className="text-gray-500 text-sm">/hour</span>
+                    <span className="text-gray-500 text-sm md:text-xl">/hour</span>
                   </div>
                   <div className="text-right">
-                    <div className="text-sm text-gray-500">
+                    <div className="text-sm md:text-lg text-gray-500">
                       {professional.reviews} reviews
                     </div>
                   </div>
                 </div>
 
-                <button className="w-full bg-blue-600 text-white py-3 rounded-xl hover:bg-blue-700 transition-colors font-medium">
+                <button className="w-full bg-blue-600 text-md md:text-xl text-white py-3 rounded-xl hover:bg-blue-700 transition-colors font-medium">
                   Book Consultation
                 </button>
               </div>
@@ -166,7 +166,7 @@ export default function ProfessionalShowcase() {
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-gray-100 text-gray-700 px-8 py-3 rounded-full hover:bg-gray-200 transition-colors font-medium">
+          <button className="bg-gray-100 text-md md:text-xl text-gray-700 px-8 py-3 rounded-full hover:bg-gray-200 transition-colors font-medium">
             View All Professionals
           </button>
         </div>

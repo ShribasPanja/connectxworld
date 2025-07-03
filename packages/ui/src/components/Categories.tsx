@@ -109,12 +109,12 @@ export default function Categories() {
 
   return (
     <section id="categories" className="py-20 bg-white">
-      <div className="w-full px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-12">
         <div className="text-center mb-16 animate-slide-up">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             Explore Professional Categories
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
             Find experts across diverse industries and specializations. From
             business strategy to creative design, we have professionals for
             every need.
@@ -135,11 +135,11 @@ export default function Categories() {
                   <category.icon size={24} />
                 </div>
 
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-lg md:text-3xl font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                   {category.name}
                 </h3>
 
-                <div className="space-y-1 text-sm text-gray-600">
+                <div className="space-y-1 text-sm md:text-xl text-gray-600">
                   <div className="flex justify-between">
                     <span>Professionals:</span>
                     <span className="font-medium">
@@ -152,7 +152,7 @@ export default function Categories() {
                   </div>
                 </div>
 
-                <button className="w-full mt-4 bg-gray-100 text-gray-700 py-2 rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-300 text-sm font-medium">
+                <button className="w-full mt-4 bg-gray-100 text-gray-700 py-2 rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-300 text-sm md:text-lg font-medium">
                   Browse Professionals
                 </button>
               </div>
@@ -161,12 +161,12 @@ export default function Categories() {
         </div>
 
         <div className="text-center mt-12">
-          <p className="text-gray-600 mb-6">
+          {/* <p className="text-gray-600 mb-6 md:text-2xl">
             Can't find your category? We're constantly adding new
             specializations.
-          </p>
-          <button className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors font-medium">
-            Request New Category
+          </p> */}
+          <button className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors font-medium text-md md:text-xl">
+            More Categories
           </button>
         </div>
       </div>

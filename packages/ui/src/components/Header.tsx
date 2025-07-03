@@ -30,10 +30,10 @@ export default function Header() {
         isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
     >
-      <div className="w-full px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-12">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
-            <div className="text-2xl font-bold text-blue-600">
+            <div className="text-2xl md:text-4xl font-bold text-blue-600">
               ConnectXWorld
             </div>
           </div>
@@ -44,7 +44,7 @@ export default function Header() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+                className="text-gray-700 text-base md:text-2xl hover:text-blue-600 transition-colors duration-200 font-medium"
               >
                 {item.name}
               </a>
@@ -52,15 +52,15 @@ export default function Header() {
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
-            <button className="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition-colors duration-200">
-              <Search size={20} />
+            {/* <button className="flex text-base md:text-2xl items-center gap-2 text-gray-700 hover:text-blue-600 transition-colors duration-200">
+              <Search size={25} />
               <span>Search</span>
-            </button>
-            <button className="flex items-center gap-2 border border-blue-600 text-blue-600 px-4 py-2 rounded-full hover:bg-blue-50 transition-colors duration-200">
-              <User size={18} />
+            </button> */}
+            <button className="flex text-base md:text-2xl items-center gap-2 border border-blue-600 text-blue-600 px-4 py-2 rounded-full hover:bg-blue-50 transition-colors duration-200">
+              <User size={20} />
               <span>Sign In</span>
             </button>
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors duration-200">
+            <button className="bg-blue-600 text-base md:text-2xl text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors duration-200">
               Join as Professional
             </button>
           </div>
