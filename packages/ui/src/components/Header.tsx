@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X, User, Search } from "lucide-react";
+import Link from "next/link";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
