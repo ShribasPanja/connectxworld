@@ -18,11 +18,11 @@ export default function Header() {
   }, []);
 
   const navigation = [
-    { name: "Home", href: "#home" },
-    { name: "Find Professionals", href: "#professionals" },
-    { name: "How It Works", href: "#how-it-works" },
-    { name: "Categories", href: "#categories" },
-    { name: "About", href: "#about" },
+    { name: "Home", href: "/" },
+    { name: "Find Professionals", href: "/professionals" },
+    { name: "How It Works", href: "/how-it-works" },
+    // { name: "Categories", href: "/categories" },
+    { name: "About", href: "/about" },
   ];
 
   return (
@@ -42,13 +42,13 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             {navigation.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
                 className="text-gray-700 text-base md:text-2xl hover:text-blue-600 transition-colors duration-200 font-medium"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </nav>
 

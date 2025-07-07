@@ -297,7 +297,7 @@ export default function ProfessionalsPage() {
         <img
           src={professional.image}
           alt={professional.name}
-          className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
+          className="w-full h-60 md:h-72 object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
@@ -317,24 +317,24 @@ export default function ProfessionalsPage() {
         )}
       </div>
 
-      <div className="p-8">
+      <div className="p-4 md:p-8">
         <div className="flex items-center justify-between mb-3">
-          <h3 className="font-semibold text-xl md:text-2xl text-gray-900">
+          <h3 className="font-semibold text-lg md:text-3xl text-gray-900">
             {professional.name}
           </h3>
           <div className="flex items-center gap-1 bg-yellow-50 px-2 py-1 rounded-full">
             <Star className="w-4 h-4 text-yellow-500 fill-current" />
-            <span className="text-sm font-bold text-yellow-700">
+            <span className="text-sm md:text-lg font-bold text-yellow-700">
               {professional.rating}
             </span>
           </div>
         </div>
 
-        <p className="text-blue-600 font-semibold mb-3 text-lg md:text-xl">
+        <p className="text-blue-600 font-semibold mb-3 text-base md:text-2xl">
           {professional.title}
         </p>
 
-        <div className="flex items-center text-gray-500 text-sm mb-4">
+        <div className="flex items-center text-gray-500 text-sm md:text-lg mb-4">
           <MapPin size={16} className="mr-2" />
           <span className="font-medium">{professional.location}</span>
         </div>
@@ -343,21 +343,21 @@ export default function ProfessionalsPage() {
           {professional.expertise.slice(0, 2).map((skill, skillIndex) => (
             <span
               key={skillIndex}
-              className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-medium border border-blue-200"
+              className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs md:text-sm font-medium border border-blue-200"
             >
               {skill}
             </span>
           ))}
           {professional.expertise.length > 2 && (
-            <span className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs font-medium">
+            <span className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs md:text-sm font-medium">
               +{professional.expertise.length - 2} more
             </span>
           )}
         </div>
 
-        <div className="flex items-center justify-between mb-6 p-4 bg-gray-50 rounded-2xl">
+        <div className="flex items-center justify-between mb-6 p-2 md:p-4 bg-gray-50 rounded-2xl">
           <div>
-            <span className="text-3xl md:text-4xl font-bold text-gray-900">
+            <span className="text-xl md:text-4xl font-bold text-gray-900">
               ${professional.rate}
             </span>
             <span className="text-gray-500 text-sm md:text-xl font-medium">
@@ -365,7 +365,7 @@ export default function ProfessionalsPage() {
             </span>
           </div>
           <div className="text-right">
-            <div className="text-sm md:text-lg text-gray-500 font-medium">
+            <div className="text-xs md:text-lg text-gray-500 font-medium">
               {professional.reviews} reviews
             </div>
             <div className="text-xs md:text-base text-gray-400">
@@ -481,13 +481,13 @@ export default function ProfessionalsPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 overflow-x-hidden">
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-12 bg-gradient-to-br from-blue-50 via-white to-green-50">
-        <div className="w-full px-2 sm:px-4 lg:px-8">
-          <div className="text-center mb-8 sm:mb-12 animate-fade-in">
+      <section className="pt-24 pb-12 bg-gradient-to-br from-blue-50 via-white to-green-50 w-full">
+        <div className="w-full max-w-none sm:max-w-[95vw] lg:max-w-[65vw] mx-auto">
+          <div className="text-center mb-8 sm:mb-12 animate-fade-in w-full max-w-full">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
               Find Your Perfect
               <br />
@@ -503,9 +503,9 @@ export default function ProfessionalsPage() {
       </section>
 
       {/* Search and Filter Section */}
-      <section className="py-8 bg-white border-b border-gray-200">
-        <div className="w-full px-2 sm:px-4 md:px-6 lg:px-8">
-          <div className="flex flex-col gap-4 lg:flex-row lg:gap-6 items-stretch lg:items-center">
+      <section className="py-8 bg-white border-b border-gray-200 w-full">
+        <div className="w-full max-w-none sm:max-w-[95vw] lg:max-w-[65vw] mx-auto">
+          <div className="flex flex-col gap-4 lg:flex-row lg:gap-6 items-stretch lg:items-center w-full max-w-full">
             {/* Search Bar */}
             <div className="flex-1 relative mb-4 lg:mb-0">
               <Search
@@ -650,9 +650,9 @@ export default function ProfessionalsPage() {
       </section>
 
       {/* Results Section */}
-      <section className="py-8 md:py-12">
-        <div className="w-full px-2 sm:px-4 md:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6 md:mb-8 gap-2 md:gap-0">
+      <section className="py-8 md:py-12 w-full">
+        <div className="w-full max-w-none sm:max-w-[95vw] lg:max-w-[65vw] mx-auto">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6 md:mb-8 gap-2 md:gap-0 w-full max-w-full">
             <div>
               <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-gray-900">
                 {filteredAndSortedProfessionals.length} Professionals Found
@@ -667,23 +667,25 @@ export default function ProfessionalsPage() {
           </div>
 
           {/* Only grid view on mobile */}
-          {viewMode === "grid" || window.innerWidth < 640 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8">
+          {viewMode === "grid" ||
+          (typeof window !== "undefined" && window.innerWidth < 640) ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8 w-full max-w-full">
               {filteredAndSortedProfessionals.map((professional, index) => (
                 <div
                   key={professional.id}
                   style={{ animationDelay: `${index * 0.1}s` }}
+                  className="w-full max-w-full"
                 >
                   <ProfessionalCard professional={professional} />
                 </div>
               ))}
             </div>
           ) : (
-            <div className="space-y-4 md:space-y-6">
+            <div className="space-y-4 md:space-y-6 w-full max-w-full">
               {filteredAndSortedProfessionals.map((professional, index) => (
                 <div
                   key={professional.id}
-                  className="animate-fade-in"
+                  className="animate-fade-in w-full max-w-full"
                   style={{ animationDelay: `${index * 0.05}s` }}
                 >
                   <ProfessionalListItem professional={professional} />
@@ -693,7 +695,7 @@ export default function ProfessionalsPage() {
           )}
 
           {filteredAndSortedProfessionals.length === 0 && (
-            <div className="text-center py-12 md:py-16">
+            <div className="text-center py-12 md:py-16 w-full max-w-full">
               <div className="text-gray-400 mb-4">
                 <Search size={48} className="mx-auto" />
               </div>
