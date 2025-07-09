@@ -3,10 +3,12 @@
 import { useState, useEffect } from "react";
 import { Menu, X, User, Search } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,7 +63,7 @@ export default function Header() {
               <User size={20} />
               <span>Sign In</span>
             </button>
-            <button className="bg-blue-600 text-base md:text-2xl text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors duration-200">
+            <button className="bg-blue-600 text-base md:text-2xl text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors duration-200" onClick={() => router.push("/becomeProfessional")}>
               Join as Professional
             </button>
           </div>
