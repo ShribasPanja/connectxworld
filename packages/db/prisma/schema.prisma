@@ -9,14 +9,58 @@ datasource db {
 }
 
 model User {
-  id                  Int               @id @default(autoincrement())
-  name                String
-  email               String            @unique
-  password            String
-  createdAt           DateTime          @default(now())
-  Booking             Booking[]
-  Review              Review[]
-  Membership          Membership[]
+  id                   String          @id @default(cuid())
+  name                 String?
+  email                String          @unique
+  emailVerified        DateTime?
+  password             String?
+  image                String?
+  accounts             Account[]
+  sessions             Session[] 
+  bookings             Booking[]
+  reviews              Review[]
+  memberships          Membership[]
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+}
+ 
+model Account {
+  userId               String
+  type                 String
+  provider             String
+  providerAccountId    String
+  refresh_token        String?
+  access_token         String?
+  expires_at           Int?
+  token_type           String?
+  scope                String?
+  id_token             String?
+  session_state        String?
+
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  user                 User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([provider, providerAccountId])
+}
+ 
+model Session {
+  sessionToken        String   @unique
+  userId              String
+  expires             DateTime
+  user                User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+ 
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+}
+ 
+model VerificationToken {
+  identifier          String
+  token               String
+  expires             DateTime
+ 
+  @@id([identifier, token])
 }
 
 model Consultant {
@@ -43,11 +87,10 @@ model Experience {
   documentUrl         String[]
   consultant          Consultant        @relation(fields: [consultantId], references: [id])
 }
-
 model Booking {
-  id                  Int               @id @default(autoincrement())
+  id                  String               @id @default(cuid())
   consultantId        Int
-  userId              Int
+  userId              String
   startTime           DateTime
   endTime             DateTime
   status              String            @default("pending")
@@ -60,17 +103,16 @@ model Booking {
 model Review {
   id                  Int               @id @default(autoincrement())
   consultantId        Int
-  userId              Int
+  userId              String
   rating              Int
   comment             String?
   createdAt           DateTime          @default(now())
   consultant          Consultant        @relation(fields: [consultantId], references: [id])
   user                User              @relation(fields: [userId], references: [id])
 }
-
 model Membership {
   id                  Int               @id @default(autoincrement())
-  userId              Int
+  userId              String
   startDate           DateTime          @default(now())
   endDate             DateTime?
   type                String            
