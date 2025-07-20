@@ -4,7 +4,10 @@ import authRouter from "./routes/auth";
 const app: express.Express = express();
 const PORT = 3001;
 
-app.use("/", authRouter);
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use("/api", authRouter);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");

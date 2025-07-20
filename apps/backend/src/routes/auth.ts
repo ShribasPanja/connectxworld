@@ -1,6 +1,6 @@
 import { Router, type Request, type Response } from "express";
-import db from "@repo/db/client";
 import bcrypt from "bcrypt";
+import db from "@repo/db/client";
 
 const authRouter: Router = Router();
 
@@ -11,6 +11,7 @@ authRouter.get("/auth", (req: Request, res: Response) => {
 authRouter.post(
   "/register",
   async (req: Request, res: Response): Promise<void> => {
+    console.log("Register endpoint hit");
     try {
       const { email, password, name } = req.body;
       if (!email || !password) {
