@@ -1,11 +1,12 @@
 import { Router, type Request, type Response } from "express";
 import bcrypt from "bcrypt";
-import db from "@repo/db/client";
+import {prisma} from "@repo/db/client";
+import jwt from "jsonwebtoken";
 
 const authRouter: Router = Router();
 
 authRouter.get("/auth", (req: Request, res: Response) => {
-  res.send("Authentication routety");
+  res.send("Authentication route");
 });
 
 authRouter.post(
@@ -22,7 +23,7 @@ authRouter.post(
       }
 
       // Check if user already exists
-      const existingUser = await db.user.findUnique({
+      const existingUser = await prisma.user.findUnique({
         where: { email },
       });
 
@@ -38,7 +39,7 @@ authRouter.post(
       const hashedPassword = await bcrypt.hash(password, saltRounds);
 
       // Create user
-      const newUser = await db.user.create({
+      const newUser = await prisma.user.create({
         data: {
           email,
           password: hashedPassword,
@@ -58,6 +59,75 @@ authRouter.post(
       });
     } catch (error) {
       console.error("Registration error:", error);
+      res.status(500).json({
+        error: "Internal server error",
+      });
+    }
+  }
+);
+
+authRouter.post(
+  "/login",
+  async (req: Request, res: Response): Promise<void> => {
+    console.log("Login endpoint hit");
+    try {
+      const { email, password } = req.body;
+      if (!email || !password) {
+        res.status(400).json({
+          error: "Email and password are required",
+        });
+        return;
+      }
+
+      // Find user
+      const user = await prisma.user.findUnique({
+        where: { email },
+        select: { id: true, name: true, email: true, password: true },
+      });
+
+      if (!user) {
+        res.status(404).json({
+          error: "User not found",
+        });
+        return;
+      }
+
+      // Validate password
+      const isValid = await bcrypt.compare(password, user.password as string);
+      if (!isValid) {
+        res.status(401).json({
+          error: "Invalid credentials",
+        });
+        return;
+      }
+      console.log("JWT_SECRET:", process.env.JWT_SECRET ? "Set" : "Not set");
+      
+      // Create JWT token with expiration
+      const token = jwt.sign(
+        { 
+          id: user.id, 
+          email: user.email, 
+          name: user.name,
+          sub: user.id,
+          iat: Math.floor(Date.now() / 1000),
+          exp: Math.floor(Date.now() / 1000) + (7 * 24 * 60 * 60) // 7 days
+        },
+        process.env.JWT_SECRET || "super-secret",
+      );
+
+      console.log("Generated JWT token:", token);
+
+      res.status(200).json({
+        message: "Login successful",
+        token: token, // Return the JWT token
+        user: {
+          id: user.id,
+          name: user.name,
+          email: user.email,
+        },
+      });
+    } catch (error) {
+      console.error("Login error:", error);
       res.status(500).json({
         error: "Internal server error",
       });

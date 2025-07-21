@@ -5,8 +5,9 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { SessionStrategy } from "next-auth";
 import type { Adapter } from "next-auth/adapters";
-import prisma from "@repo/db/client";
+import {prisma} from "@repo/db/client";
 import bcrypt from "bcrypt";
+import { getToken } from "next-auth/jwt";
 
 export const authConfig = {
   adapter: PrismaAdapter(prisma) as Adapter,
@@ -75,6 +76,7 @@ export const authConfig = {
         token.email = user.email;
         token.name = user.name;
       }
+      console.log("JWT Callback - Token:", token);
       return token;
     },
 
@@ -86,6 +88,7 @@ export const authConfig = {
         session.user.name = token.name;
         session.accessToken = token; // Optional: expose token to client
       }
+      console.log("Session Callback - Session:", session);
       return session;
     },
   },
