@@ -1,7 +1,8 @@
 import { Router, type Request, type Response } from "express";
 import bcrypt from "bcrypt";
-import {prisma} from "@repo/db/client";
+import { prisma } from "@repo/db/client";
 import jwt from "jsonwebtoken";
+import { authMiddleware } from "../middleware/authmiddleware";
 
 const authRouter: Router = Router();
 
@@ -101,16 +102,16 @@ authRouter.post(
         return;
       }
       console.log("JWT_SECRET:", process.env.JWT_SECRET ? "Set" : "Not set");
-      
+
       // Create JWT token with expiration
       const token = jwt.sign(
-        { 
-          id: user.id, 
-          email: user.email, 
+        {
+          id: user.id,
+          email: user.email,
           name: user.name,
           sub: user.id,
           iat: Math.floor(Date.now() / 1000),
-          exp: Math.floor(Date.now() / 1000) + (7 * 24 * 60 * 60) // 7 days
+          exp: Math.floor(Date.now() / 1000) + 7 * 24 * 60 * 60, // 7 days
         },
         process.env.JWT_SECRET || "super-secret",
       );
@@ -134,5 +135,14 @@ authRouter.post(
     }
   }
 );
+
+authRouter.get("/protected", authMiddleware, (req, res) => {
+  // Access user data from req.user
+  console.log("Protected route hit, user:", req.user);
+  res.json({
+    message: `Welcome ${req.user.name || req.user.email}! This is protected data.`,
+    user: req.user,
+  });
+});
 
 export default authRouter;

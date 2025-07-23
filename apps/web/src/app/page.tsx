@@ -1,12 +1,12 @@
-import Header from "@repo/ui/components/Header";
-import Hero from "@repo/ui/components/Hero";
-import ProfessionalShowcase from "@repo/ui/components/ProfessionalShowcase";
-import HowItWorks from "@repo/ui/components/HowItWorks";
-import Categories from "@repo/ui/components/Categories";
-import Features from "@repo/ui/components/Features";
-import Testimonials from "@repo/ui/components/Testimonials";
-import Contact from "@repo/ui/components/Contact";
-import Footer from "@repo/ui/components/Footer";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import ProfessionalShowcase from "./components/ProfessionalShowcase";
+import HowItWorks from "./components/HowItWorks";
+import Categories from "./components/Categories";
+import Features from "./components/Features";
+import Testimonials from "./components/Testimonials";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (

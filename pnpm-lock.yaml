@@ -23,12 +23,18 @@ importers:
       '@types/cors':
         specifier: ^2.8.19
         version: 2.8.19
+      '@types/jsonwebtoken':
+        specifier: ^9.0.10
+        version: 9.0.10
       bcrypt:
         specifier: ^6.0.0
         version: 6.0.0
       cors:
         specifier: ^2.8.5
         version: 2.8.5
+      dotenv:
+        specifier: ^17.2.0
+        version: 17.2.0
       express:
         specifier: ^5.1.0
         version: 5.1.0
@@ -51,9 +57,6 @@ importers:
       '@types/express':
         specifier: ^5.0.3
         version: 5.0.3
-      '@types/jsonwebtoken':
-        specifier: ^9.0.10
-        version: 9.0.10
       nodemon:
         specifier: ^3.1.10
         version: 3.1.10
@@ -69,9 +72,6 @@ importers:
       '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
-      '@types/jsonwebtoken':
-        specifier: ^9.0.10
-        version: 9.0.10
       bcrypt:
         specifier: ^6.0.0
         version: 6.0.0
@@ -112,6 +112,9 @@ importers:
       '@types/bcrypt':
         specifier: ^5.0.2
         version: 5.0.2
+      '@types/jsonwebtoken':
+        specifier: ^9.0.10
+        version: 9.0.10
       '@types/node':
         specifier: ^22
         version: 22.16.0
@@ -146,14 +149,8 @@ importers:
   packages/db:
     dependencies:
       '@prisma/client':
-        specifier: 6.11.0
+        specifier: ^6.11.0
         version: 6.11.0(prisma@6.11.0(typescript@5.8.3))(typescript@5.8.3)
-      prisma:
-        specifier: ^6.10.1
-        version: 6.11.0(typescript@5.8.3)
-      typescript:
-        specifier: ^5.8.3
-        version: 5.8.3
     devDependencies:
       '@repo/typescript-config':
         specifier: workspace:*
@@ -161,6 +158,12 @@ importers:
       '@types/node':
         specifier: ^24.0.15
         version: 24.0.15
+      prisma:
+        specifier: ^6.10.1
+        version: 6.11.0(typescript@5.8.3)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.8.3
 
   packages/eslint-config:
     devDependencies:
@@ -217,6 +220,9 @@ importers:
       next:
         specifier: ^15.3.5
         version: 15.3.5(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      next-auth:
+        specifier: ^4.24.11
+        version: 4.24.11(@auth/core@0.40.0)(next@15.3.5(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       react:
         specifier: ^19
         version: 19.1.0
@@ -1320,6 +1326,10 @@ packages:
 
   dotenv@16.0.3:
     resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
+    engines: {node: '>=12'}
+
+  dotenv@17.2.0:
+    resolution: {integrity: sha512-Q4sgBT60gzd0BB0lSyYD3xM4YxrXA9y4uBDof1JNYGzOXrQdQ6yX+7XIAqoFOGQFOTK1D3Hts5OllpxMDZFONQ==}
     engines: {node: '>=12'}
 
   dunder-proto@1.0.1:
@@ -3838,6 +3848,8 @@ snapshots:
 
   dotenv@16.0.3: {}
 
+  dotenv@17.2.0: {}
+
   dunder-proto@1.0.1:
     dependencies:
       call-bind-apply-helpers: 1.0.2
@@ -4776,6 +4788,23 @@ snapshots:
       cookie: 0.7.2
       jose: 4.15.9
       next: 15.3.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      oauth: 0.9.15
+      openid-client: 5.7.1
+      preact: 10.26.9
+      preact-render-to-string: 5.2.6(preact@10.26.9)
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
+      uuid: 8.3.2
+    optionalDependencies:
+      '@auth/core': 0.40.0
+
+  next-auth@4.24.11(@auth/core@0.40.0)(next@15.3.5(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+    dependencies:
+      '@babel/runtime': 7.27.6
+      '@panva/hkdf': 1.2.1
+      cookie: 0.7.2
+      jose: 4.15.9
+      next: 15.3.5(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       oauth: 0.9.15
       openid-client: 5.7.1
       preact: 10.26.9

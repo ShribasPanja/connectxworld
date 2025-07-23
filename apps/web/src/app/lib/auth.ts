@@ -7,7 +7,7 @@ import { SessionStrategy } from "next-auth";
 import type { Adapter } from "next-auth/adapters";
 import {prisma} from "@repo/db/client";
 import bcrypt from "bcrypt";
-import { getToken } from "next-auth/jwt";
+import jsonwebtoken from "jsonwebtoken";
 
 export const authConfig = {
   adapter: PrismaAdapter(prisma) as Adapter,
@@ -76,23 +76,22 @@ export const authConfig = {
         token.email = user.email;
         token.name = user.name;
       }
-      console.log("JWT Callback - Token:", token);
+      //console.log("JWT Callback - Token:", token);
       return token;
     },
-
     // Customize session data returned to client
     async session({ session, token }: { session: any; token: any }) {
       if (token) {
         session.user.id = token.id;
         session.user.email = token.email;
         session.user.name = token.name;
-        session.accessToken = token; // Optional: expose token to client
+        const encodedToken = jsonwebtoken.sign(token, process.env.NEXTAUTH_SECRET || "super-secret", {
+          algorithm: "HS256",
+        });
+        session.accessToken = encodedToken;
       }
       console.log("Session Callback - Session:", session);
       return session;
     },
   },
-  // pages: {
-  //   signIn: "/auth", // Optional: custom sign-in page
-  // },
 };

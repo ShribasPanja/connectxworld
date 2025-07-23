@@ -25,8 +25,8 @@ import {
   Video,
   Phone,
 } from "lucide-react";
-import Header from "@repo/ui/components/Header";
-import Footer from "@repo/ui/components/Footer";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 interface FormData {
   personalInfo: {
